@@ -238,7 +238,7 @@
             this.deletedSelectedMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deletedSelectedMemberButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deletedSelectedMemberButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.deletedSelectedMemberButton.Location = new System.Drawing.Point(785, 330);
+            this.deletedSelectedMemberButton.Location = new System.Drawing.Point(763, 330);
             this.deletedSelectedMemberButton.Name = "deletedSelectedMemberButton";
             this.deletedSelectedMemberButton.Size = new System.Drawing.Size(109, 71);
             this.deletedSelectedMemberButton.TabIndex = 23;
@@ -265,7 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(922, 708);
+            this.ClientSize = new System.Drawing.Size(893, 708);
             this.Controls.Add(this.createTeamButton);
             this.Controls.Add(this.deletedSelectedMemberButton);
             this.Controls.Add(this.teamMembersListBox);
