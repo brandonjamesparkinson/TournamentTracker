@@ -2,12 +2,6 @@
 using System.Data;
 using TrackerLibrary.Models;
 
-	//@PlaceNumber int,
-	//@PlaceName nvarchar(50),
-	//@PrizeAmount money,
-    //@PrizePercentage decimal (6,3),
-	//@id int = 0 output
-
 namespace TrackerLibrary.DataAccess
 {
     public class SqlConnector : IDataConnection
