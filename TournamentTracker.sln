@@ -7,22 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackerLibrary", "TrackerLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerUI", "TrackerUI\TrackerUI.csproj", "{A4EB7CCE-A3A5-4035-A3CA-F76D3ED60C79}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlScripts", "SqlScripts", "{6DAC7E4B-AC06-40F7-9DAB-97C26733CA1D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{7C81FBF5-1848-4F3A-804F-280FD2659B09}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.Matchups.sql = ..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.Matchups.sql
-		..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.People.sql = ..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.People.sql
-		..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.Prizes.sql = ..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.Prizes.sql
-		..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.TeamMembers.sql = ..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.TeamMembers.sql
-		..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.Teams.sql = ..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.Teams.sql
-		..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.TournamentEntries.sql = ..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.TournamentEntries.sql
-		..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.TournamentPrizes.sql = ..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.TournamentPrizes.sql
-		..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.Tournaments.sql = ..\..\..\Users\brand\OneDrive\Documents\Tables\dbo.Tournaments.sql
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StoredProcs", "StoredProcs", "{70CF4DC2-4398-46E7-B115-8E2DBB9959D9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,10 +24,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{7C81FBF5-1848-4F3A-804F-280FD2659B09} = {6DAC7E4B-AC06-40F7-9DAB-97C26733CA1D}
-		{70CF4DC2-4398-46E7-B115-8E2DBB9959D9} = {6DAC7E4B-AC06-40F7-9DAB-97C26733CA1D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31D86626-F4C8-4860-A7DC-29BB17C42AE1}
