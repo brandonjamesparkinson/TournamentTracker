@@ -81,6 +81,19 @@ namespace TrackerLibrary.DataAccess
         public TournamentModel CreateTournament(TournamentModel model)
         {
             List<TournamentModel> tournaments = TournamentFile.FullFilePath().LoadFile().ConvertToTournamentModels(TeamFile, PeopleFile);
+
+            int currentID = 1;
+
+            if (tournaments.Count > 0)
+            {
+                currentID = tournaments.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = currentID;
+
+            tournaments.Add(model);
+
+            tournaments.SaveToTournamentFile(TournamentFile);
         }
 
         public List<PersonModel> GetPerson_All()
