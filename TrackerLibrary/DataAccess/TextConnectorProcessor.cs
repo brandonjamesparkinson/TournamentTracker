@@ -118,7 +118,6 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 {
                     tm.Prizes.Add(prizes.Where(x => x.Id == int.Parse(id)).First());
                 }
-                //TODO - capture Rounds information 
 
                 output.Add(tm);
             }
