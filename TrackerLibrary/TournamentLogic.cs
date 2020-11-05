@@ -8,11 +8,6 @@ namespace TrackerLibrary
 {
     public static class TournamentLogic
     {
-        // Order our list randomly
-        // check if it is big enough - if not, add in byes - 2*2*2*2 - 2^4
-        // create our first round of matchups
-        // create every round after that - 8 matchups - 4 matchups - 2 matchups - 1 matchup 
-
         public static void CreateRounds(TournamentModel model)
         {
             List<TeamModel> randomizedTeams = RandomizeTeamOrder(model.EnteredTeams);
@@ -28,13 +23,28 @@ namespace TrackerLibrary
         {
             int round = 2;
             List<MatchupModel> previousRound = model.Rounds[0];
+            List<MatchupModel> currRound = new List<MatchupModel>();
+            MatchupModel currMatchup = new MatchupModel();
 
             while (round <= rounds)
             {
                 foreach (MatchupModel match in previousRound)
                 {
+                    currMatchup.Entries.Add(new MatchupEntryModel { ParentMatchup = match });
 
+                    if (currMatchup.Entries.Count > 1)
+                    {
+                        currMatchup.MatchupRound = round;
+                        currRound.Add(currMatchup);
+                        currMatchup = new MatchupModel();
+                    }
                 }
+
+                model.Rounds.Add(currRound);
+                previousRound = currRound;
+
+                currRound = new List<MatchupModel>();
+                round += 1;
             }
         }
 
