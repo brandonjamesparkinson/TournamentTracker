@@ -278,7 +278,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
 
             if (matchups.Count > 0)
             {
-                currentId = matchups.OrderByDescending(x => x.Id).First().Id + 1);
+                currentId = matchups.OrderByDescending(x => x.Id).First().Id + 1;
             }
 
             matchup.Id = currentId;
@@ -288,7 +288,19 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 entry.SaveEntryToFile(matchupEntryFile);
             }
 
-            //save to file 
+            List<string> lines = new List<string>();
+
+            foreach (MatchupModel m in matchups)
+            {
+                string winner = "";
+                if (m.Winner != null)
+                {
+                    winner = m.Winner.Id.ToString();
+                }
+                lines.Add($"{ m.Id },{ ConvertMatchupEntryListToString(m.Entries) },{ winner },{ m.MatchupRound }");
+            }
+
+            File.WriteAllLines(GlobalConfig.MatchupFile.FullFilePath(), lines);
         }
 
         public static void SaveEntryToFile(this MatchupEntryModel entry, string matchupEntryFile)
@@ -303,8 +315,21 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             }
 
             entry.Id = currentId;
+            entries.Add(entry);
 
-            //save to file 
+            List<string> lines = new List<string>();
+
+            foreach (MatchupEntryModel e in entries)
+            {
+                string parent = "";
+                if (e.ParentMatchup != null)
+                {
+                    parent = e.ParentMatchup.Id.ToString();
+                }
+                lines.Add($"{ e.Id },{ e.TeamCompeting },{ e.Score },{ e.ParentMatchup.Id }");
+            }
+
+            File.WriteAllLines(GlobalConfig.MatchupEntryFile.FullFilePath(), lines);
         }
 
 
@@ -339,6 +364,25 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             foreach (MatchupModel m in matchups)
             {
                 output += $"{ m.Id }^";
+            }
+
+            output = output.Substring(0, output.Length - 1);
+
+            return output;
+        }
+
+        private static string ConvertMatchupEntryListToString(List<MatchupEntryModel> entries)
+        {
+            string output = "";
+
+            if (entries.Count == 0)
+            {
+                return "";
+            }
+
+            foreach (MatchupEntryModel e in entries)
+            {
+                output += $"{ e.Id }|";
             }
 
             output = output.Substring(0, output.Length - 1);
